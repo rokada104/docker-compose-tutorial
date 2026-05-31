@@ -6,7 +6,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER} # Пользователь базы данных из .env
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # Пароль базы данных из .env
     ports:
-      - "${POSTGRES_PORT}:5432" # Пробрасываем порт: внешний из .env, внутренний фиксированный
+      - "${POSTGRES_PORT}:5432" # Пробрасываем порт: внешний из .env*(порт нашего компьютера), внутренний фиксированный(внутри контейнера)
     volumes:
       - pgdata:/var/lib/postgresql/data # Volume для сохранности данных базы
     healthcheck: # Проверяем "здоровье" контейнера базы
